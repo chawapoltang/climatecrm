@@ -1,43 +1,43 @@
-# 🌿 Climate CRM
+# Climate CRM
 
-A full-featured CRM built for **sustainability and climate consulting firms**. Manage your sales pipeline, cost sheets, project delivery, team timesheets, and KPI dashboards — all in one place.
+Climate CRM is a CRM built for sustainability and climate consulting firms. It brings your sales pipeline, cost sheets, project delivery, timesheets, and KPI dashboards into one place, so your team doesn't have to juggle spreadsheets and disconnected tools.
 
-> **No install. No server. Just open `index.html`.**
+There's nothing to install and no server to run. Open `index.html` and you're in.
 
 ---
 
-## ✨ Features
+## What's inside
 
 | Module | What it does |
 |---|---|
-| **Dashboard / KPI** | Revenue, pipeline, won-value donut chart, monthly KPI splits |
-| **Customers** | Company profiles, multi-contact management, activity log with @mentions, tags |
-| **Opportunities** | Pipeline (Kanban + Table), quotation builder, PDF export, cost sheet linking |
-| **Cost Sheet** | Service cost builder — COGS + OPEX tasks by staff level, margin calculator |
-| **Delivery** | Project delivery tracking, installment schedule, work log |
-| **Time Sheet** | Staff timesheet with planned vs. actual cost |
-| **Team & Rates** | User management, role-based access, man-hour rate configuration |
-| **Setup** | Connect your own Google Sheets backend with one URL paste |
+| **Dashboard / KPI** | See revenue, pipeline, and won value (as a donut chart), plus monthly KPI splits |
+| **Customers** | Keep company profiles, manage multiple contacts, log activity with @mentions, and organize with tags |
+| **Opportunities** | Track deals in a Kanban board or table, build quotations, export to PDF, and link cost sheets |
+| **Cost Sheet** | Build service costs from COGS and OPEX tasks by staff level, and check your margins |
+| **Delivery** | Follow project delivery, plan installment schedules, and keep a work log |
+| **Time Sheet** | Record staff hours and compare planned cost against actual cost |
+| **Team & Rates** | Manage users, set role-based access, and configure man-hour rates |
+| **Setup** | Connect your own Google Sheets backend by pasting a single URL |
 
 ---
 
-## 🚀 Getting Started
+## Getting started
 
-### Option A — Run Locally (no setup needed)
+### Option A: Run it locally
 
-1. Download or clone this repository
-2. Open `index.html` in any browser
-3. Log in with the demo credentials below
+1. Download or clone this repository.
+2. Open `index.html` in any browser.
+3. Log in with one of the demo accounts below.
 
-That's it. All data is saved in your browser's localStorage.
+That's all. Your data is saved in your browser's localStorage.
 
-### Option B — GitHub Pages
+### Option B: Host it on GitHub Pages
 
-Push to any GitHub repo, enable **Pages** from the `main` branch root, and share the URL.
+Push the project to a GitHub repo, enable Pages from the root of the `main` branch, and share the link with your team.
 
 ---
 
-## 🔐 Demo Login Credentials
+## Demo logins
 
 | Email | Password | Role |
 |---|---|---|
@@ -46,109 +46,110 @@ Push to any GitHub repo, enable **Pages** from the `main` branch root, and share
 | `bob@demo.com` | `demo1234` | Manager |
 | `carol@demo.com` | `demo1234` | Operation |
 
-> **Note:** In offline/demo mode, any password is accepted — just enter the email and type anything in the password field.
+In offline demo mode the password isn't actually checked. Enter any email from the list and type whatever you like in the password field.
 
 ---
 
-## ☁️ Connect Your Own Google Sheets (Optional)
+## Connecting your own Google Sheets (optional)
 
-To sync data across a real team, connect your own Google Apps Script backend:
+If you want your team to share live data, you can hook the app up to your own Google Apps Script backend. Here's how.
 
-### Step 1 — Create a Google Sheet
+### Step 1: Create the Google Sheet
 
-Create a new Google Sheet with the following tab names (exact):
+Make a new Google Sheet with these tabs, named exactly as shown:
 
 ```
 customers   opportunities   deliveries   costsheets   costsheet_quotes
 kpi         users           timesheet    notifications   settings
 ```
 
-### Step 2 — Add the Apps Script Backend
+### Step 2: Add the Apps Script backend
 
-1. In your Google Sheet, open **Extensions → Apps Script**
-2. Paste your GAS backend code (the script handles all read/write/delete operations)
-3. In **Project Settings → Script Properties**, add:
+1. In your sheet, go to **Extensions > Apps Script**.
+2. Paste in your GAS backend code. It needs to handle reading, writing, and deleting data.
+3. Open **Project Settings > Script Properties** and add a property:
    - Key: `AUTH_SECRET`
-   - Value: any secret string (e.g. `my-secret-token-2025`)
+   - Value: any secret string you choose (for example, `my-secret-token-2025`)
 
-### Step 3 — Deploy as a Web App
+### Step 3: Deploy it as a Web App
 
-1. Click **Deploy → New Deployment**
-2. Type: **Web App**
-3. Execute as: **Me**
-4. Who has access: **Anyone**
-5. Copy the deployment URL
+1. Click **Deploy > New Deployment**.
+2. Choose **Web App** as the type.
+3. Set "Execute as" to **Me**.
+4. Set "Who has access" to **Anyone**.
+5. Copy the deployment URL.
 
-### Step 4 — Connect in the App
+### Step 4: Connect the app
 
-1. Open the app → click the **plug icon** (⬆) in the top-right header
-2. Paste your **Deployment URL** and **Auth Token**
-3. Click **Test Connection** to verify
-4. Click **Save & Activate**, then refresh the page
+1. Open the app and click the plug icon in the top-right corner of the header.
+2. Paste in your **Deployment URL** and **Auth Token**.
+3. Click **Test Connection** to make sure everything works.
+4. Click **Save & Activate**, then refresh the page.
 
-✅ The app will now sync all data to your Google Sheets in real time.
+Once connected, the app syncs all your data to your Google Sheets in real time.
 
 ---
 
-## 🛠 Tech Stack
+## Tech stack
 
 | | |
 |---|---|
-| **Frontend** | React 18 (via CDN — no bundler) |
-| **JSX Transform** | Babel Standalone (browser-side) |
-| **Styling** | Vanilla CSS (inline + injected stylesheets) |
-| **Storage** | `localStorage` (offline) + Google Apps Script (optional sync) |
-| **Charts** | Hand-rolled SVG — no charting library |
+| **Frontend** | React 18, loaded from a CDN with no bundler |
+| **JSX transform** | Babel Standalone, running in the browser |
+| **Styling** | Plain CSS (inline styles and injected stylesheets) |
+| **Storage** | localStorage for offline use, with optional Google Apps Script sync |
+| **Charts** | Hand-built SVG, no charting library |
 | **Backend** | Google Apps Script (bring your own) |
 
-No `npm install`. No build step. No framework. Just open the HTML file.
+There's no `npm install` and no build step. Open the HTML file and go.
 
 ---
 
-## 🌍 Internationalization
+## Language and localization
 
-The app includes:
-- **Thai language** UI labels and company names
-- **Buddhist Era (BE)** date formatting (e.g. 2569 instead of 2026)
-- **Thai month abbreviations** (ม.ค., ก.พ., …)
-- **THB currency** formatting (฿)
+The app is made with Thai users in mind, and includes:
+
+- Thai UI labels and company names
+- Buddhist Era (BE) dates, so you'll see 2569 instead of 2026
+- Thai month abbreviations (ม.ค., ก.พ., and so on)
+- Thai baht (฿) currency formatting
 
 ---
 
-## 📁 Project Structure
+## Project structure
 
 ```
 Climate_crm-main/
-├── index.html        ← Entry point (load React + Babel from CDN, mount app)
+├── index.html        <- Entry point: loads React and Babel from CDN, mounts the app
 └── src/
-    └── App.jsx       ← Entire application (~7,500 lines, single file)
+    └── App.jsx       <- The whole application (about 7,500 lines in one file)
 ```
 
 ---
 
-## 🔄 How Data Works
+## How your data is handled
 
 ```
 Open index.html
       │
       ▼
-  GS URL configured?
-  (saved in browser localStorage)
+  Is a Google Sheets URL configured?
+  (saved in your browser's localStorage)
       │
    ┌──┴─────────────────────────┐
   NO (demo mode)              YES (live mode)
    │                            │
    ▼                            ▼
-localStorage only          Sync with your
+localStorage only          Syncs with your
 Demo data preloaded        Google Sheets
-Any login works            Team credentials required
+Any login works            Real team credentials required
 ```
 
 ---
 
-## 📋 Services Supported
+## Supported services
 
-The CRM is pre-configured for these climate/sustainability service codes:
+The CRM comes pre-configured with these climate and sustainability service codes:
 
 | Code | Service |
 |---|---|
@@ -173,21 +174,21 @@ The CRM is pre-configured for these climate/sustainability service codes:
 
 ---
 
-## 🧑‍💻 Role-Based Access
+## Who can see what
 
 | Role | Dashboard | Customers | Opportunities | Delivery | Cost Sheet | Timesheet | Team & Rates |
 |---|---|---|---|---|---|---|---|
-| Admin | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Manager | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Sales | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Operation | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Admin | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
+| Manager | Yes | Yes | Yes | Yes | Yes | Yes | No |
+| Sales | Yes | Yes | Yes | Yes | Yes | Yes | No |
+| Operation | Yes | No | No | No | No | Yes | No |
 
 ---
 
-## 📄 License
+## License
 
-MIT — free to use, modify, and deploy.
+MIT. You're free to use, modify, and deploy it however you like.
 
 ---
 
-*Built with React 18, Babel Standalone, and Google Apps Script.*
+Built with React 18, Babel Standalone, and Google Apps Script.
